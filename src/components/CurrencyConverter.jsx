@@ -9,7 +9,7 @@ const CurrencyConverter = () => {
   const [convertedAmount, setConvertedAmount] = useState(null);
 
   useEffect(() => {
-    // Запрос к API для загрузки списка валют
+    
     fetch('https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json')
       .then((response) => response.json())
       .then((data) => {
@@ -21,7 +21,7 @@ const CurrencyConverter = () => {
   }, []);
 
   useEffect(() => {
-    // Запрос к API для загрузки курса обмена валюты fromCurrency
+   
     fetch(`https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=${fromCurrency}&json`)
       .then((response) => response.json())
       .then((data) => {
